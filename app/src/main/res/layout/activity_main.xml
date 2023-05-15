@@ -9,6 +9,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="104dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/barcelona" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,17 +85,18 @@
         android:id="@+id/registerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Or create a new account"
+        android:text="Or create a new account:"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="normal" />
+        android:textStyle="normal"
+        android:layout_margin="0dp"/>
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="348dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/cyan"
         android:text="Register"
         android:textColor="@color/white"
