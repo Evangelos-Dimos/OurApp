@@ -1,5 +1,8 @@
 package com.example.ourapp;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+
 public class User
 {
     private int user_id;
@@ -14,6 +17,10 @@ public class User
         this.password=password;
         this.email=email;
         this.phone_number=phone_number;
+    }
+
+    public User() {
+
     }
 
     public int getUserID() {
@@ -45,4 +52,7 @@ public class User
     }
 
     public void setPhoneNumber(String phone_number) { this.phone_number = phone_number; }
+
+
 }
+

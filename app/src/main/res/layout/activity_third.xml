@@ -123,14 +123,6 @@
                 android:layout_margin="0dp"
                 android:text="@string/disabled_access" />
 
-            <RadioButton
-                android:id="@+id/pets"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pets"
-                android:layout_margin="0dp" />
-
-
             <Button
                 android:id="@+id/searchButton"
                 android:layout_width="match_parent"
