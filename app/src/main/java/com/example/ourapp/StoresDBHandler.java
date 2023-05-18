@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class StoresDBHandler extends SQLiteOpenHelper{
 
-    //Σταθερές για τη ΒΔ (όνομα ΒΔ, έκδοση, πίνακες κλπ)
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "storesDB.db";
     public static final String TABLE_STORES = "stores";
@@ -23,7 +22,7 @@ public class StoresDBHandler extends SQLiteOpenHelper{
     public static final String COLUMN_AVERAGE_AGE = "average_age";
     public static final boolean COLUMN_PARKING = false;
     public static final boolean COLUMN_DISABLED_ACCESS = false;
-    public static final boolean COLUMN_PETS = false;
+
 
 
     public StoresDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
@@ -44,8 +43,7 @@ public class StoresDBHandler extends SQLiteOpenHelper{
                 COLUMN_MUSIC + " TEXT," +
                 COLUMN_AVERAGE_AGE + " TEXT," +
                 COLUMN_PARKING + " INTEGER," +
-                COLUMN_DISABLED_ACCESS + " INTEGER," +
-                COLUMN_PETS + " INTEGER" +
+                COLUMN_DISABLED_ACCESS + " INTEGER" +
                 ")";
         db.execSQL(CREATE_STORES_TABLE);
 
@@ -60,9 +58,15 @@ public class StoresDBHandler extends SQLiteOpenHelper{
     public ArrayList<Store> findStore(Store store) {
         ArrayList<Store> stores=new ArrayList<>();
         String query;
-        if(store.getParking() && store.getDisabledAccess()==false)
+        if(store.getParking()==true && store.getDisabledAccess()==false)
         {
-           query="SELECT * FROM" + TABLE_STORES + "WHERE" + COLUMN_TYPE + "=" + store.getType()
+           query="SELECT * FROM" + TABLE_STORES +
+                   "WHERE" + COLUMN_TYPE + "=" + store.getType() +
+                   COLUMN_STYLE + "=" + store.getStyle() +
+                   COLUMN_LOCATION + "=" + store.getLocation() +
+                   COLUMN_MUSIC + "=" + store.getMusic() +
+                   COLUMN_AVERAGE_AGE + "=" + store.getAverageAge() +
+                   COLUMN_PARKING + "=" + store.getParking();
         }
         else if (store.getParking()==false && store.getDisabledAccess()==true)
         {

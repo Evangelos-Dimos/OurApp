@@ -11,10 +11,9 @@ public class Store {
     private String average_age;
     private boolean parking;
     private boolean disabled_access;
-    private boolean pets;
 
 
-    public Store(int store_id,String store_name,String type,String style,String location,String music,String average_age,boolean parking,boolean disabled_access,boolean pets)
+    public Store(int store_id,String store_name,String type,String style,String location,String music,String average_age,boolean parking,boolean disabled_access)
     {
         this.store_id = store_id;
         this.store_name=store_name;
@@ -25,7 +24,6 @@ public class Store {
         this.average_age=average_age;
         this.parking=parking;
         this.disabled_access=disabled_access;
-        this.pets=pets;
     }
 
     public int getStoreID() {
@@ -80,9 +78,4 @@ public class Store {
 
     public void setDisabledAccess(boolean disabled_access) { this.disabled_access = disabled_access; }
 
-    public boolean getPets() {
-        return pets;
-    }
-
-    public void setPets(boolean pets) { this.pets = pets; }
 }
