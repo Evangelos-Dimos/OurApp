@@ -19,9 +19,7 @@ public class User
         this.phone_number=phone_number;
     }
 
-    public User() {
-
-    }
+    public User() {}
 
     public int getUserID() {
         return user_id;

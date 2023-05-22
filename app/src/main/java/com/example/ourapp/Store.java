@@ -13,6 +13,7 @@ public class Store {
     private boolean disabled_access;
 
 
+    public Store(){}
     public Store(int store_id,String store_name,String type,String style,String location,String music,String average_age,boolean parking,boolean disabled_access)
     {
         this.store_id = store_id;
