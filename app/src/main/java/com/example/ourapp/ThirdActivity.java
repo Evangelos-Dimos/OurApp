@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,13 @@ public class ThirdActivity extends AppCompatActivity {
     String[] item4 = {"House", "Pop", "Hip-hop", "Lounge"};
     String[] item5 = {"18+", "25+", "40+", "Family friendly"};
 
-
+    com.google.android.material.textfield.TextInputLayout type;
+    com.google.android.material.textfield.TextInputLayout style;
+    com.google.android.material.textfield.TextInputLayout location;
+    com.google.android.material.textfield.TextInputLayout music;
+    com.google.android.material.textfield.TextInputLayout average_age;
+    RadioButton parking;
+    RadioButton disabled;
     AutoCompleteTextView autoCompleteTextView;
 
     ArrayAdapter<String> arrayAdapter;
@@ -61,5 +68,26 @@ public class ThirdActivity extends AppCompatActivity {
         autoCompleteTextView = findViewById(R.id.autoComplete5);
         arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, item5);
         autoCompleteTextView.setAdapter(arrayAdapter);
+    }
+
+    public void search(View view)
+    {
+        StoresDBHandler dbHandler = new StoresDBHandler(this, null, null, 1);
+        String searchType = type.getText().toString();
+        String searchStyle = password.getText().toString();
+        String searchLocation = username.getText().toString();
+        String searchMusic = password.getText().toString();
+        String searchAverageAge = username.getText().toString();
+        Boolean searchParking = password.getText().toString();
+        Boolean searchDisabled = password.getText().toString();
+
+        if (!signInUsername.equals("") && !signInPassword.equals(""))
+        {
+            User found = dbHandler.findUser(signInUsername,signInPassword);
+            if (found!=null)
+            {
+                //πήγαινε στο 3ο activity
+            }
+        }
     }
 }

@@ -56,7 +56,7 @@ public class UsersDBHandler extends SQLiteOpenHelper{
 
         SQLiteDatabase db = this .getWritableDatabase();
         Cursor cursor = db.rawQuery(query , null);
-        User user=new User(); //Να φτιαξουμε τον κενό κατασκευαστή
+        User user=new User();
         if (cursor.moveToFirst()) {
             cursor.moveToFirst();
             user.setUserID(Integer.parseInt(cursor.getString(0)));
@@ -71,12 +71,12 @@ public class UsersDBHandler extends SQLiteOpenHelper{
 
     }
 
-    public void addUser(User user){
+    public void addUser(String username,String password,String email,String phone_number){
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USER_NAME,user.getUserName());
-        values.put(COLUMN_PASSWORD,user.getPassword());
-        values.put(COLUMN_EMAIL,user.getEmail());
-        values.put(COLUMN_PHONE_NUMBER,user.getPhoneNumber());
+        values.put(COLUMN_USER_NAME,username);
+        values.put(COLUMN_PASSWORD,password);
+        values.put(COLUMN_EMAIL,email);
+        values.put(COLUMN_PHONE_NUMBER,phone_number);
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_USERS,null,values);
         db.close();

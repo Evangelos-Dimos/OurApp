@@ -77,7 +77,9 @@
                 android:text="Sign in"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:onClick="signIn"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -101,7 +103,9 @@
         android:text="Register"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:cornerRadius="20dp" />
+        app:cornerRadius="20dp"
+        android:onClick="register"
+        />
 
 
 </LinearLayout>

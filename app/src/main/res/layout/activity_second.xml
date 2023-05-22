@@ -107,7 +107,9 @@
                 android:text="Register"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"
+                android:onClick="registration"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
