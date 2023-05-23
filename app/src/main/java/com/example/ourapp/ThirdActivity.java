@@ -1,10 +1,12 @@
 package com.example.ourapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -19,6 +21,8 @@ public class ThirdActivity extends AppCompatActivity {
     String[] item4 = {"House", "Pop", "Hip-hop", "Lounge"};
     String[] item5 = {"18+", "25+", "40+", "Family friendly"};
 
+    Button searchButton;
+
     com.google.android.material.textfield.TextInputLayout type;
     com.google.android.material.textfield.TextInputLayout style;
     com.google.android.material.textfield.TextInputLayout location;
@@ -27,8 +31,8 @@ public class ThirdActivity extends AppCompatActivity {
     RadioButton parking;
     RadioButton disabled;
     AutoCompleteTextView autoCompleteTextView;
-
     ArrayAdapter<String> arrayAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +72,26 @@ public class ThirdActivity extends AppCompatActivity {
         autoCompleteTextView = findViewById(R.id.autoComplete5);
         arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, item5);
         autoCompleteTextView.setAdapter(arrayAdapter);
+
+        searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                openActivity4();
+            }
+        });
     }
 
-    public void search(View view)
+    public void openActivity4()
+    {
+        Intent intent = new Intent(this, FourthActivity.class);
+        startActivity(intent);
+    }
+
+
+    /**public void search(View view)
     {
         StoresDBHandler dbHandler = new StoresDBHandler(this, null, null, 1);
         String searchType = type.getText().toString();
@@ -86,8 +107,8 @@ public class ThirdActivity extends AppCompatActivity {
             User found = dbHandler.findUser(signInUsername,signInPassword);
             if (found!=null)
             {
-                //πήγαινε στο 3ο activity
+                openActivity4()
             }
         }
-    }
+    }**/
 }

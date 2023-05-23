@@ -104,7 +104,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/cyan"
-                android:text="Register"
+                android:text="DONE"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp"

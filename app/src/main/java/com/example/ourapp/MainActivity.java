@@ -2,6 +2,7 @@ package com.example.ourapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     EditText username;
     EditText password;
     Button loginButton;
+    Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +24,49 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(view -> {
-            if (username.getText().toString().equals("user") && password.getText().toString().equals("1234"))
+        registerButton = findViewById(R.id.registerButton);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                signIn(v);
+            }
+
+            /**if (username.getText().toString().equals("user") && password.getText().toString().equals("1234"))
             {
                 Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-            } else
+            }
+            else
             {
                 Toast.makeText(MainActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
             }
+            **/
         });
 
+        registerButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                openActivity2();
+            }
+        });
     }
+
+
+
+    public void openActivity2() {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    public void openActivity3() {
+        Intent intent = new Intent(this, ThirdActivity.class);
+        startActivity(intent);
+    }
+
+
 
     public void signIn(View view)
     {
@@ -54,6 +88,5 @@ public class MainActivity extends AppCompatActivity {
     {
         //πήγαινε στο 2ο activity
     }
-
 
 }
