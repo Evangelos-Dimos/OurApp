@@ -19,7 +19,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="0dp"
         android:background="@drawable/edit_backround"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
@@ -99,7 +99,7 @@
 
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/doneButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
@@ -108,8 +108,20 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp"
-                android:onClick="registration"
-                />
+                android:onClick="registration" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/white"
+        android:onClick="register"
+        android:text="BACK"
+        android:textColor="@color/cyan"
+        android:textSize="18sp"
+        app:cornerRadius="20dp" />
 </LinearLayout>

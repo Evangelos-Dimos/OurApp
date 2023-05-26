@@ -16,28 +16,43 @@ public class SecondActivity extends AppCompatActivity {
     EditText email;
     EditText phone_number;
 
-    Button loginButton;
+    Button doneButton;
 
+    Button backButton;
+
+    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        loginButton = findViewById(R.id.loginButton);
+        doneButton = findViewById(R.id.doneButton);
 
-        loginButton.setOnClickListener(new View.OnClickListener()
+        doneButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                registration(v);
+                //registration(v);
+                openActivity1();
+            }
+        });
+
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                openActivity1();
             }
         });
     }
 
-    public void openActivity3()
+    public void openActivity1()
     {
-        Intent intent = new Intent(this, ThirdActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -52,7 +67,10 @@ public class SecondActivity extends AppCompatActivity {
         if (!registerUsername.equals("") && !registerPassword.equals("") && !registerEmail.equals("") && !registerPhoneNumber.equals(""))
         {
             dbHandler.addUser(registerUsername,registerPassword,registerEmail,registerPhoneNumber);
-            openActivity3();
+            //openActivity3();
+        }
+        else{
+
         }
     }
 

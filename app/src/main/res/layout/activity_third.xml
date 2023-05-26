@@ -139,4 +139,16 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/white"
+        android:onClick="register"
+        android:text="BACK"
+        android:textColor="@color/cyan"
+        android:textSize="18sp"
+        app:cornerRadius="20dp" />
 </LinearLayout>

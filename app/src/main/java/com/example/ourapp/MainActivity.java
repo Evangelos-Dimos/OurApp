@@ -1,13 +1,19 @@
 package com.example.ourapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.database.sqlite.SQLiteOpenHelper;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,21 +22,33 @@ public class MainActivity extends AppCompatActivity {
     Button loginButton;
     Button registerButton;
 
+    UsersDBHandler usersDB;
+    SQLiteDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        usersDB = new UsersDBHandler(this,"usersDB.db", null,1);
+        database = usersDB.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("vagg","123jdfhc");
+        long rowId = database.insert("mytable",null,values);
+        database.close();
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
         registerButton = findViewById(R.id.registerButton);
 
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                signIn(v);
+                //signIn(v);
+                openActivity3();
             }
 
             /**if (username.getText().toString().equals("user") && password.getText().toString().equals("1234"))
@@ -43,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
             **/
         });
+
 
         registerButton.setOnClickListener(new View.OnClickListener()
         {
@@ -88,5 +107,7 @@ public class MainActivity extends AppCompatActivity {
     {
         //πήγαινε στο 2ο activity
     }
+
+
 
 }

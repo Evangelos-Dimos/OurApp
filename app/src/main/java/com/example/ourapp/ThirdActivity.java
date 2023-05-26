@@ -23,6 +23,8 @@ public class ThirdActivity extends AppCompatActivity {
 
     Button searchButton;
 
+    Button backButton;
+
     com.google.android.material.textfield.TextInputLayout type;
     com.google.android.material.textfield.TextInputLayout style;
     com.google.android.material.textfield.TextInputLayout location;
@@ -82,6 +84,17 @@ public class ThirdActivity extends AppCompatActivity {
                 openActivity4();
             }
         });
+
+        backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                openActivity1();
+            }
+        });
     }
 
     public void openActivity4()
@@ -90,6 +103,11 @@ public class ThirdActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openActivity1()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     /**public void search(View view)
     {
