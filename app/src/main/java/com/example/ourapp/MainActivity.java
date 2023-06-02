@@ -30,12 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        usersDB = new UsersDBHandler(this,"usersDB.db", null,1);
+        /**usersDB = new UsersDBHandler(this,"usersDB.db", null,1);
         database = usersDB.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("vagg","123jdfhc");
         long rowId = database.insert("mytable",null,values);
-        database.close();
+        database.close();**/
+
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void signIn(View view)
+    /**public void signIn(View view)
     {
         UsersDBHandler dbHandler = new UsersDBHandler(this, null, null, 1);
         String  signInUsername= username.getText().toString();
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     public void register(View view)
     {
         //πήγαινε στο 2ο activity
-    }
+    }**/
 
 
 

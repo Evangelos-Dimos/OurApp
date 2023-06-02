@@ -8,4 +8,15 @@
     <string name="parking">Parking</string>
     <string name="disabled_access">Access for disabled people</string>
     <string name="pets">Pet-friendly</string>
+    <string name="sign_in">Sign in</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="or_create_a_new_account">Or create a new account:</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone number</string>
+    <string name="done">DONE</string>
+    <string name="back">BACK</string>
+    <string name="what_are_your_preferences">What are your preferences?</string>
+    <string name="search">Search</string>
 </resources>

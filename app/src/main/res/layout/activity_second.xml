@@ -12,15 +12,18 @@
     <ImageView
 
         android:layout_width="526dp"
-        android:layout_height="165dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/app_logo" />
+        android:layout_height="150dp"
+        android:src="@drawable/app_logo"
+        tools:ignore="ContentDescription" />
+        <!--android:layout_centerHorizontal="true"-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="0dp"
-        android:background="@drawable/edit_backround"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edit_background"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -35,7 +38,7 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Register"
+                android:text="@string/register"
                 android:textAlignment="center"
                 android:textColor="@color/cyan"
                 android:textSize="36sp"
@@ -46,55 +49,59 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/edit_backround"
-                android:drawableLeft="@drawable/baseline_person_outline_24"
+                android:background="@drawable/edit_background"
+                android:drawableStart="@drawable/baseline_person_outline_24"
                 android:drawablePadding="8dp"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:autofillHints="username" />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/edit_backround"
-                android:drawableLeft="@drawable/baseline_password_24"
+                android:background="@drawable/edit_background"
+                android:drawableStart="@drawable/baseline_password_24"
                 android:drawablePadding="8dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:autofillHints="password" />
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/edit_backround"
-                android:drawableLeft="@drawable/baseline_email_24"
+                android:background="@drawable/edit_background"
+                android:drawableStart="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:autofillHints="emailAddress" />
 
             <EditText
                 android:id="@+id/phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/edit_backround"
-                android:drawableLeft="@drawable/baseline_phone_24"
+                android:background="@drawable/edit_background"
+                android:drawableStart="@drawable/baseline_phone_24"
                 android:drawablePadding="8dp"
-                android:hint="Phone number"
+                android:hint="@string/phone_number"
                 android:inputType="phone"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:autofillHints="phone_number" />
 
 
 
@@ -104,11 +111,10 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/cyan"
-                android:text="DONE"
+                android:text="@string/done"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:cornerRadius="20dp"
-                android:onClick="registration" />
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -119,8 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:backgroundTint="@color/white"
-        android:onClick="register"
-        android:text="BACK"
+        android:text="@string/back"
         android:textColor="@color/cyan"
         android:textSize="18sp"
         app:cornerRadius="20dp" />

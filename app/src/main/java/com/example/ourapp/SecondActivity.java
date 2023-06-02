@@ -20,7 +20,6 @@ public class SecondActivity extends AppCompatActivity {
 
     Button backButton;
 
-    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -56,7 +55,7 @@ public class SecondActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void registration(View view)
+    /**public void registration(View view)
     {
         UsersDBHandler dbHandler = new UsersDBHandler(this, null, null, 1);
         String  registerUsername= username.getText().toString();
@@ -72,6 +71,6 @@ public class SecondActivity extends AppCompatActivity {
         else{
 
         }
-    }
+    }**/
 
 }

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:background="@drawable/edit_backround"
+        android:background="@drawable/edit_background"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -28,7 +28,7 @@
                 android:id="@+id/searchText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="What are your preferences?"
+                android:text="@string/what_are_your_preferences"
                 android:textAlignment="center"
                 android:textColor="@color/cyan"
                 android:textSize="24sp"
@@ -129,11 +129,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:backgroundTint="@color/cyan"
-                android:text="Search"
+                android:text="@string/search"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp"
-                android:onClick="search"
                 />
 
 
@@ -146,8 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:backgroundTint="@color/white"
-        android:onClick="register"
-        android:text="BACK"
+        android:text="@string/back"
         android:textColor="@color/cyan"
         android:textSize="18sp"
         app:cornerRadius="20dp" />

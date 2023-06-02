@@ -13,14 +13,15 @@
 
         android:layout_width="552dp"
         android:layout_height="162dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/app_logo" />
+        android:src="@drawable/app_logo"
+        tools:ignore="ContentDescription"/>
+        <!--android:layout_centerHorizontal="true"-->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:background="@drawable/edit_backround"
+        android:background="@drawable/edit_background"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -35,7 +36,7 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign in"
+                android:text="@string/sign_in"
                 android:textAlignment="center"
                 android:textColor="@color/cyan"
                 android:textSize="36sp"
@@ -46,27 +47,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/edit_backround"
-                android:drawableLeft="@drawable/baseline_person_outline_24"
+                android:background="@drawable/edit_background"
+                android:drawableStart="@drawable/baseline_person_outline_24"
                 android:drawablePadding="8dp"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:autofillHints="username"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/edit_backround"
-                android:drawableLeft="@drawable/baseline_password_24"
+                android:background="@drawable/edit_background"
+                android:drawableStart="@drawable/baseline_password_24"
                 android:drawablePadding="8dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:autofillHints="password" />
 
             <Button
                 android:id="@+id/loginButton"
@@ -74,11 +78,10 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/cyan"
-                android:text="Sign in"
+                android:text="@string/sign_in"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp"
-                android:onClick="signIn"
                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -87,7 +90,7 @@
         android:id="@+id/registerText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Or create a new account:"
+        android:text="@string/or_create_a_new_account"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -100,11 +103,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/cyan"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="20dp"
-        android:onClick="register"
         />
 
 
